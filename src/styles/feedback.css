@@ -1,0 +1,296 @@
+/* Feedback page. Uses the tokens from landing.css */
+
+.sb-fb {
+  padding: 40px 0 96px;
+}
+
+.sb-fb__inner {
+  max-width: 720px;
+}
+
+.sb-fb__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.sb-page .sb-fb__back {
+  color: var(--muted);
+}
+
+.sb-fb__back:hover {
+  color: var(--ink);
+}
+
+.sb-fb__card {
+  padding: 36px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-bottom-width: 6px;
+  border-radius: 28px;
+}
+
+.sb-fb__card h1 {
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.sb-fb__lead {
+  margin-top: 12px;
+  font-size: 17px;
+  color: var(--muted);
+}
+
+/* What's it about? */
+.sb-fb__group {
+  margin: 32px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.sb-fb__group legend,
+.sb-fb__field label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.sb-fb__field label span {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.sb-fb__kinds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sb-fb__kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 2px solid var(--line);
+  border-bottom-width: 4px;
+  border-radius: 14px;
+  background: var(--card);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    transform 0.08s ease;
+}
+
+.sb-fb__kind:hover {
+  border-color: #cfcaff;
+}
+
+.sb-fb__kind:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+.sb-fb__kind input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sb-fb__kind:has(input:focus-visible) {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.sb-fb__kind-icon {
+  display: inline-flex;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.sb-fb__kind.is-picked {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.sb-fb__kind.is-picked .sb-fb__kind-icon {
+  color: var(--primary);
+}
+
+/* Fields */
+.sb-fb__field {
+  margin-top: 28px;
+}
+
+.sb-fb__label-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.sb-fb__label-row span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.sb-fb__label-row .is-over {
+  color: #dc2626;
+}
+
+.sb-fb__field textarea,
+.sb-fb__field input {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px; /* 16px stops phones zooming in on tap */
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.sb-fb__field textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.sb-fb__field textarea::placeholder,
+.sb-fb__field input::placeholder {
+  color: #a3a3b5;
+}
+
+.sb-fb__field textarea:focus,
+.sb-fb__field input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--card);
+}
+
+.sb-fb__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.sb-fb__row .sb-fb__field {
+  margin-top: 20px;
+}
+
+.sb-fb__trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.sb-fb__error {
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* Submit uses the app's game button */
+.sb-fb__submit {
+  margin-top: 28px;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.sb-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+}
+
+/* Thank-you state */
+.sb-fb__done {
+  text-align: center;
+  padding: 56px 36px;
+}
+
+.sb-fb__done-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 5px 0 var(--success-dark);
+  color: #fff;
+  font-size: 38px;
+  animation: sb-tick 0.5s cubic-bezier(0.2, 1.5, 0.4, 1) both;
+}
+
+.sb-fb__done p {
+  margin: 12px auto 0;
+  max-width: 28em;
+  font-size: 17px;
+  color: var(--muted);
+}
+
+.sb-fb__done-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.sb-fb__again {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid var(--primary-soft);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0 0 2px;
+}
+
+@media (max-width: 720px) {
+  .sb-fb {
+    padding: 24px 0 64px;
+  }
+
+  .sb-fb__card {
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
+
+  .sb-fb__row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .sb-fb__kind {
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+}
