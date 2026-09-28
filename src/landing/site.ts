@@ -2,7 +2,7 @@
 
 export const DOWNLOAD = {
   // Direct link to the APK file (GitHub Releases, Supabase Storage, etc.)
-  apkUrl: "https://example.com/scrbb.apk",
+  apkUrl: "https://github.com/tayuprosper/scrbb-app/releases/download/v1.0.0/app-release.apk",
   version: "1.0.0",
   // Fill these in when the app is on the stores. Until then the badges show "Coming soon".
   playStoreUrl: null as string | null,
