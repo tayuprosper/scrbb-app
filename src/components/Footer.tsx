@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
         <nav className="sb-footer__links" aria-label="Footer">
           <a href="/#how">How it works</a>
-          <a href="/#courses">Courses</a>
+          <a href="/courses">Courses</a>
           <a href="/#pricing">Pricing</a>
           <a href="/#faq">FAQ</a>
           <Link href="/feedback">Send feedback</Link>
